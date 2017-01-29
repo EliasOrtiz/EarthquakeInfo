@@ -8,6 +8,7 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import rx.Observable;
 
 /**
  * Created by eliasor on 30/01/2017.
@@ -19,15 +20,15 @@ import retrofit2.http.QueryMap;
 public interface APIService {
 
     @GET("eqs")
-    Call<EarthquakeResponse> getRecentEarthquakes(@QueryMap Map<String, String> options);
+    Observable<EarthquakeResponse> getRecentEarthquakes(@QueryMap Map<String, String> options);
 
     @GET("eqs/{year}")
-    Call<EarthquakeResponse> getEarthquakesOnYear(
+    Observable<EarthquakeResponse> getEarthquakesOnYear(
             @Path("year") String year,
             @QueryMap Map<String, String> options);
 
     @GET("eqs/{year}/{month}")
-    Call<EarthquakeResponse> getEarthquakesOnYearAndMonth(
+    Observable<EarthquakeResponse> getEarthquakesOnYearAndMonth(
             @Path("year") String year,
             @Path("month") String month,
             @QueryMap Map<String, String> options);
