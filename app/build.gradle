@@ -10,8 +10,10 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        resValue("string", "maps_key", getConfigField("maps_key"))
         multiDexEnabled true
+
+        resValue("string", "maps_key", getConfigField("maps_key"))
+        buildConfigField("String", "API_URL", "\"http://www.seismi.org/api/\"")
     }
     buildTypes {
         release {
@@ -46,6 +48,7 @@ dependencies {
     compile 'com.google.code.gson:gson:2.6.1'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
     compile 'io.reactivex:rxandroid:1.0.1'
+    compile 'com.orhanobut:logger:1.15'
 
     testCompile 'junit:junit:4.12'
 }
