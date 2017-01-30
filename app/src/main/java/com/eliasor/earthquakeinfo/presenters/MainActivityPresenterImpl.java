@@ -6,6 +6,8 @@ import com.eliasor.earthquakeinfo.interfaces.MainActivityPresenter;
 import com.eliasor.earthquakeinfo.interfaces.MainActivityView;
 import com.eliasor.earthquakeinfo.model.Earthquake;
 import com.eliasor.earthquakeinfo.model.EarthquakeResponse;
+import com.eliasor.earthquakeinfo.model.MagnitudeColor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -37,19 +39,23 @@ public class MainActivityPresenterImpl implements MainActivityPresenter {
         List<Marker> markers = new ArrayList<>();
         for (Earthquake earthquake : earthquakeResponse.getEarthquakes()) {
             LatLng pos = new LatLng(Double.parseDouble(earthquake.getLat()), Double.parseDouble(earthquake.getLon()));
-            
             Marker marker = view.getMapInstance().addMarker(
                     new MarkerOptions()
                             .position(pos)
+                            .icon(BitmapDescriptorFactory.defaultMarker(MagnitudeColor.determineMagnitudeColor(Float.parseFloat(earthquake.getMagnitude()))))
                             .title(earthquake.getRegion())
                             .snippet(earthquake.getMagnitude()));
+
+
             markers.add(marker);
         }
-
     }
 
     @Override
     public void loadRecentError(String error) {
+    }
 
+    private int rgbToHue(int r, int g, int b) {
+        return 0;
     }
 }
