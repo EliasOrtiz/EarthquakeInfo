@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/magnitudeAll"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_square"
+        android:backgroundTint="@color/colorPrimary"
+        android:gravity="center"
+        android:onClick="filterMagnitude"
+        android:text="All"
+        android:textColor="@android:color/black"
+        android:textSize="12sp" />
+    <TextView
+        android:id="@+id/magnitude1"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_square"
+        android:backgroundTint="@color/magnitude1"
+        android:gravity="center"
+        android:onClick="filterMagnitude"
+        android:text="1"
+        android:textColor="@android:color/black"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/magnitude2"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_square"
+        android:backgroundTint="@color/magnitude2"
+        android:clickable="true"
+        android:gravity="center"
+        android:onClick="filterMagnitude"
+        android:text="2"
+        android:textColor="@android:color/black"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/magnitude3"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_square"
+        android:backgroundTint="@color/magnitude3"
+        android:clickable="true"
+        android:gravity="center"
+        android:onClick="filterMagnitude"
+        android:text="3"
+        android:textColor="@android:color/black"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/magnitude4"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_square"
+        android:backgroundTint="@color/magnitude4"
+        android:gravity="center"
+        android:onClick="filterMagnitude"
+        android:text="4"
+        android:textColor="@android:color/black"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/magnitude5"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_square"
+        android:backgroundTint="@color/magnitude5"
+        android:gravity="center"
+        android:onClick="filterMagnitude"
+        android:text="5"
+        android:textColor="@android:color/black"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/magnitude6"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_square"
+        android:backgroundTint="@color/magnitude6"
+        android:gravity="center"
+        android:onClick="filterMagnitude"
+        android:text="6"
+        android:textColor="@android:color/black"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/magnitude7"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_square"
+        android:backgroundTint="@color/magnitude7"
+        android:gravity="center"
+        android:onClick="filterMagnitude"
+        android:text="7"
+        android:textColor="@android:color/black"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/magnitude8"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_square"
+        android:backgroundTint="@color/magnitude8"
+        android:gravity="center"
+        android:onClick="filterMagnitude"
+        android:text="8"
+        android:textColor="@android:color/black"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/magnitude9"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_square"
+        android:backgroundTint="@color/magnitude9"
+        android:gravity="center"
+        android:onClick="filterMagnitude"
+        android:text="9"
+        android:textColor="@android:color/black"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/magnitudeMore"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_square"
+        android:backgroundTint="@color/magnitudeMore"
+        android:gravity="center"
+        android:onClick="filterMagnitude"
+        android:text="10"
+        android:textColor="@android:color/black"
+        android:textSize="12sp" />
+
+</LinearLayout>

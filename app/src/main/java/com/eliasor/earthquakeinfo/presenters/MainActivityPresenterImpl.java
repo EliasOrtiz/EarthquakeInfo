@@ -5,6 +5,7 @@ import com.eliasor.earthquakeinfo.interfaces.MainActivityInteractor;
 import com.eliasor.earthquakeinfo.interfaces.MainActivityPresenter;
 import com.eliasor.earthquakeinfo.interfaces.MainActivityView;
 import com.eliasor.earthquakeinfo.model.Earthquake;
+import com.eliasor.earthquakeinfo.model.EarthquakeMarker;
 import com.eliasor.earthquakeinfo.model.EarthquakeResponse;
 import com.eliasor.earthquakeinfo.model.MagnitudeColor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
@@ -15,6 +16,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.Math.floor;
+import static java.lang.Math.round;
+
 /**
  * Created by eliasor on 30/01/2017.
  */
@@ -22,9 +26,11 @@ import java.util.List;
 public class MainActivityPresenterImpl implements MainActivityPresenter {
     private MainActivityView view;
     private MainActivityInteractor interactor;
+    List<EarthquakeMarker> markersOnMap;
 
     public MainActivityPresenterImpl(MainActivityView view) {
         this.view = view;
+        markersOnMap = new ArrayList<>();
         interactor = new MainActivityInteractorImpl(this);
     }
 
@@ -36,7 +42,6 @@ public class MainActivityPresenterImpl implements MainActivityPresenter {
     @Override
     public void loadRecentOK(EarthquakeResponse earthquakeResponse) {
 
-        List<Marker> markers = new ArrayList<>();
         for (Earthquake earthquake : earthquakeResponse.getEarthquakes()) {
             LatLng pos = new LatLng(Double.parseDouble(earthquake.getLat()), Double.parseDouble(earthquake.getLon()));
             Marker marker = view.getMapInstance().addMarker(
@@ -45,9 +50,25 @@ public class MainActivityPresenterImpl implements MainActivityPresenter {
                             .icon(BitmapDescriptorFactory.defaultMarker(MagnitudeColor.determineMagnitudeColor(Float.parseFloat(earthquake.getMagnitude()))))
                             .title(earthquake.getRegion())
                             .snippet(earthquake.getMagnitude()));
+            markersOnMap.add(new EarthquakeMarker(earthquake, marker));
+        }
+    }
 
+    @Override
+    public void filterMarkersByMagnitude(int magnitude) {
+        if (magnitude == -1) { //show all
+            for (EarthquakeMarker earthquakeMarker : markersOnMap) {
+                earthquakeMarker.getMarker().setVisible(true);
+            }
+        } else { //show selected magnitude
+            for (EarthquakeMarker earthquakeMarker : markersOnMap) {
 
-            markers.add(marker);
+                if (round(floor(earthquakeMarker.getMagnitude())) != magnitude) {
+                    earthquakeMarker.getMarker().setVisible(false);
+                } else {
+                    earthquakeMarker.getMarker().setVisible(true);
+                }
+            }
         }
     }
 
@@ -55,7 +76,4 @@ public class MainActivityPresenterImpl implements MainActivityPresenter {
     public void loadRecentError(String error) {
     }
 
-    private int rgbToHue(int r, int g, int b) {
-        return 0;
-    }
 }

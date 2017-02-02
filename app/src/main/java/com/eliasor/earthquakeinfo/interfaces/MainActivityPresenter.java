@@ -13,4 +13,6 @@ public interface MainActivityPresenter {
     void loadRecentOK(EarthquakeResponse earthquakeResponse);
 
     void loadRecentError(String error);
+
+    void filterMarkersByMagnitude(int magnitude);
 }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="magnitude1">#00FF00</color>
+    <color name="magnitude2">#33CC00</color>
+    <color name="magnitude3">#4CB200</color>
+    <color name="magnitude4">#659900</color>
+    <color name="magnitude5">#7F7F00</color>
+    <color name="magnitude6">#996600</color>
+    <color name="magnitude7">#B24C00</color>
+    <color name="magnitude8">#CC3300</color>
+    <color name="magnitude9">#E51900</color>
+    <color name="magnitudeMore">#FF0000</color>
+</resources>
